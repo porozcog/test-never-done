@@ -34,7 +34,7 @@ public class LibraryController {
     	
     }
     
-    @PutMapping( path = "/tmobile/v1/test/book/create", consumes = "application/json" , produces = "application/json" )
+    @PutMapping( path = "/api/books", consumes = "application/json" , produces = "application/json" )
     public ResponseEntity<CreateBookResponse> createBook( @RequestBody CreateBookRequest createBook)
     {
     	if(LOGGER.isInfoEnabled())
@@ -43,7 +43,7 @@ public class LibraryController {
     	return new ResponseEntity<>(libraryManager.createBook(createBook), HttpStatus.CREATED);
     }
     
-    @GetMapping(path = "/tmobile/v1/test/books" ,produces = "application/json" )
+    @GetMapping(path = "/api/books" ,produces = "application/json" )
     public ResponseEntity<GetBooksResponse> getAllBooks()
     {
     	if(LOGGER.isInfoEnabled())
@@ -53,7 +53,7 @@ public class LibraryController {
     }
     
     
-    @DeleteMapping(path = "/tmobile/v1/test/delete" )
+    @DeleteMapping(path = "/api/books" )
     public ResponseEntity<Void> deleteAll()
     {
     	if(LOGGER.isInfoEnabled())
